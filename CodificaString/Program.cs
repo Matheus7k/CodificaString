@@ -14,7 +14,7 @@ internal class Program
         codigo = char.Parse(Console.ReadLine());
 
         Console.Write("Texto codificado: ");
-        foreach (char c in codificaTexto(texto, codigo))
+        foreach (char c in codificaTexto(texto.ToLower(), codigo))
         {
             Console.Write(c);
         }
@@ -25,7 +25,7 @@ internal class Program
 
             for (int i = 0; i < texto.Length; i++)
             {
-                if (texto[i] != 'a' && texto[i] != 'e' && texto[i] != 'i' && texto[i] != 'o' && texto[i] != 'u' && !char.IsWhiteSpace(texto[i]))
+                if (texto[i] != 'a' && texto[i] != 'e' && texto[i] != 'i' && texto[i] != 'o' && texto[i] != 'u' && char.IsLetter(texto[i]))
                 {
                     textoCodificado.Add(codigo);
                     textoCodificado.Add(texto[i]);
